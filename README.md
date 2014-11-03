@@ -60,7 +60,7 @@ exports.config = {
 
 ```javascript
 var pesto = require('pesto');
-pesto('path/to/proctractor.conf.js').then(
+pesto('path/to/protractor.conf.js').then(
   function(success) {
     console.log('Tests executed, result: ' + (success ? ' success!' : 'failure... :('));
   }
@@ -72,7 +72,7 @@ var pesto = require('pesto');
 var gutil = require('gulp-util');
 
 gulp.task('e2e-tests', function(done) {
-  pesto('path/to/proctractor.conf.js').then(
+  pesto('path/to/protractor.conf.js').then(
     function(success) {
       gutil.log('Tests executed, result: ' + (success ? ' success!' : 'failure... :('));
       done();
