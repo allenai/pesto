@@ -4,6 +4,7 @@ var fs = require('fs');
 var q = require('q');
 var util = require('util');
 var bin = require('./lib/bin');
+var colors = require('colors');
 var path = require('path');
 var SaucelabsSeleniumServer = require('./lib/saucelabs-selenium-server');
 var LocalSeleniumServer = require('./lib/local-selenium-server');
@@ -59,10 +60,13 @@ module.exports = function(configFile) {
             // the supporting scripts do and then resolve with true or false, depending on whether
             // things were successful.
             var success = code === 0;
+
+            // TODO: This reporting is noisy and should be handled elsewhere and/or be configurable
             console.log('-------------------------------------------'.cyan);
             console.log('[pesto]'.cyan + ' Tests executed successfully.');
             console.log('[pesto]'.cyan + ' Status: ' + (success ? '✔ Success'.green : '× Failure'.red));
             console.log('-------------------------------------------'.cyan);
+
             executed.resolve(success);
           });
       },
