@@ -12,9 +12,6 @@ if(!config || !fs.existsSync(config) || !fs.statSync(config).isFile()) {
 
 pesto(config).then(
   function(success) {
-    console.log('[pesto]'.cyan + ' Tests executed successfully.  Status: ' +
-        (success ? '✔ Success'.green : '× Failure'.red)
-      );
     process.exit(0);
   },
   function(e) {

@@ -7,6 +7,8 @@ The perfect recipe for running integration tests of [AngularJS](https://angularj
 * Add a dash of [Protractor](http://angular.github.io/protractor/)
 * And optionally enhance with a pinch of [SauceLabs](http://www.saucelabs.com).
 
+Ultimately, pesto is a simple API for running integration tests using [Protractor](http://angular.github.io/protractor/) and other supporting technologies.
+
 ## Installation
 
 Install via `npm`:
@@ -23,9 +25,9 @@ pesto(config)
 
 Where `config` is the path to the protractor configuration file.  
 
-If `config` includes `sauceUser` and `sauceKey` the [SauceLabs](http://www.saucelabs.com) service is used. You can also set the boolean `proxy` to true to enable a proxy making your local machine available to the [SauceLabs](http://www.saucelabs.com) virtual machine(s).
+If `config` includes the `sauceUser` and `sauceKey` properties, then the [SauceLabs](http://www.saucelabs.com) service is used. You can also set the boolean `proxy` to true to enable a proxy making your local machine available to the [SauceLabs](http://www.saucelabs.com) virtual machine(s).
 
-Alternatively a local Selenium server is used.
+Otherwise a local Selenium server is used.
 
 **Example Configuration with [SauceLabs](http://www.saucelabs.com):**
 

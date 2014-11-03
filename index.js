@@ -58,7 +58,12 @@ module.exports = function(configFile) {
             // I'd like to make things a little less noisy, but for now we simply output everything
             // the supporting scripts do and then resolve with true or false, depending on whether
             // things were successful.
-            executed.resolve(code === 0);
+            var success = code === 0;
+            console.log('-------------------------------------------'.cyan);
+            console.log('[pesto]'.cyan + ' Tests executed successfully.');
+            console.log('[pesto]'.cyan + ' Status: ' + (success ? '✔ Success'.green : '× Failure'.red));
+            console.log('-------------------------------------------'.cyan);
+            executed.resolve(success);
           });
       },
       function(err) {
