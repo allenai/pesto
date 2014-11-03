@@ -56,9 +56,6 @@ exports.config = {
 };
 ```
 
-Example
-
-
 ## Examples
 
 ```javascript
