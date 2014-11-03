@@ -1,0 +1,9 @@
+run-tests CONFIG
+
+  CONFIG - Path to the protractor configuration file.
+
+  If the protractor configuration file includes the sauceKey and sauceUser properties, a sauce-labs
+  virtual testing environment is used.  You may also enable a sauce-connect proxy by specifying
+  proxy: true.
+
+  In the absence of these properties a local selenium server is started.

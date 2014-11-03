@@ -1,0 +1,11 @@
+#!/usr/local/bin/node
+var install = require('../lib/sauce-connect/install');
+
+install().then(
+  function(success) {
+    console.log((success.fresh ? 'Successfully' : 'Already') + ' installed: ' + success.filename);
+  },
+  function(err) {
+    console.error(err);
+  }
+);

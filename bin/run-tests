@@ -1,0 +1,24 @@
+#!/usr/local/bin/node
+var fs = require('fs');
+var colors = require('colors');
+
+var config = process.argv.slice(2).shift();
+var pesto = require('../');
+
+if(!config || !fs.existsSync(config) || !fs.statSync(config).isFile()) {
+  console.log(fs.readFileSync(__dirname + '/run-tests-usage.txt').toString());
+  process.exit(1);
+}
+
+pesto(config).then(
+  function(success) {
+    console.log('[pesto]'.cyan + ' Tests executed successfully.  Status: ' +
+        (success ? '✔ Success'.green : '× Failure'.red)
+      );
+    process.exit(0);
+  },
+  function(e) {
+    console.log(e);
+    process.exit(2);
+  }
+);

@@ -1,0 +1,30 @@
+{
+  "name": "pesto",
+  "description": "The perfect recipe for running end-to-end tests for AngularJS based web applications.",
+  "version": "0.0.1",
+  "repository": "/allenai/pesto.git",
+  "bin": "bin/run-tests",
+  "keywords": [
+    "pesto",
+    "angularjs",
+    "angular",
+    "testing",
+    "saucelabs",
+    "protractor"
+  ],
+  "contributors": [
+    {
+      "name": "Sam Skjonsberg",
+      "email": "sams@allenai.org",
+      "url": "http://codeviking.net"
+    }
+  ],
+  "license": "GPL v2",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "protractor": "^1.3.1",
+    "q": "^1.0.1",
+    "request": "^2.47.0",
+    "unzip": "^0.1.11"
+  }
+}
