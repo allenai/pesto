@@ -13,3 +13,7 @@ These situations should be identified and handled cleanly.
 Right now all of the output of sauce-connect, webdriver, etc is simply piped through to stdout and
 stderr.  Long-term it'd be ideal if this could be captured and cleaner, more legible output
 could be provided.
+
+## Remove implicit use of console.log
+
+It's a little invasive.  We should provide configurable logging.
