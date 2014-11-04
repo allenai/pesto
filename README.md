@@ -43,6 +43,8 @@ pesto protractor.conf.js
 
 Pesto comes loaded with the dependencies you need (plus it'll download any supporting binaries or jars you need at runtime).
 
+Also, Pesto doesn't need to be installed globally as shown in the example above.  It integrates nicely with technologies like [gulpjs](http://gulpjs.com/) and [grunt](http://gruntjs.com/).
+
 ## Installation
 
 Install via `npm`:
@@ -96,27 +98,22 @@ exports.config = {
 
 ```javascript
 var pesto = require('pesto');
-pesto('path/to/protractor.conf.js').then(
-  function(success) {
-    console.log('Tests executed, result: ' + (success ? ' success!' : 'failure... :('));
-  }
-);
+pesto('path/to/protractor.conf.js');
 ```
 
 ```javascript
 var pesto = require('pesto');
-var gutil = require('gulp-util');
 
 gulp.task('e2e-tests', function(done) {
   pesto('path/to/protractor.conf.js').then(
     function(success) {
-      gutil.log('Tests executed, result: ' + (success ? ' success!' : 'failure... :('));
-      done();
+      if(!success) {
+        done('Tests failed.');
+      } else {
+        done();
+      }
     },
-    function(err) {
-      new gutil.PluginError('pesto', err);
-      done();
-    }
+    done
   );
 });
 ```
