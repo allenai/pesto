@@ -54,20 +54,21 @@ module.exports = function(configFile) {
       function() {
         bin('protractor').exec(configFile)
           .on('exit', function(code) {
-            server.stop();
-            // We resolve with true or false, depending on whether things succeeded or not.  Eventually
-            // I'd like to make things a little less noisy, but for now we simply output everything
-            // the supporting scripts do and then resolve with true or false, depending on whether
-            // things were successful.
-            var success = code === 0;
+            server.stop().then(function() {
+              // We resolve with true or false, depending on whether things succeeded or not.  Eventually
+              // I'd like to make things a little less noisy, but for now we simply output everything
+              // the supporting scripts do and then resolve with true or false, depending on whether
+              // things were successful.
+              var success = code === 0;
 
-            // TODO: This reporting is noisy and should be handled elsewhere and/or be configurable
-            console.log('-------------------------------------------'.cyan);
-            console.log('[pesto]'.cyan + ' Tests executed successfully.');
-            console.log('[pesto]'.cyan + ' Status: ' + (success ? '✔ Success'.green : '× Failure'.red));
-            console.log('-------------------------------------------'.cyan);
+              // TODO: This reporting is noisy and should be handled elsewhere and/or be configurable
+              console.log('-------------------------------------------'.cyan);
+              console.log('[pesto]'.cyan + ' Tests executed successfully.');
+              console.log('[pesto]'.cyan + ' Status: ' + (success ? '✔ Success'.green : '× Failure'.red));
+              console.log('-------------------------------------------'.cyan);
 
-            executed.resolve(success);
+              executed.resolve(success);
+            });
           });
       },
       function(err) {
