@@ -30,9 +30,9 @@ webdriver-manager stop
 
 Add saucelabs to the mix and things get even crazier.
 
-The goal of pesto is to make setting up and running integration tests as painless as possible.  As if testing isn't easy, then no one will do it.
+The goal of pesto is to make setting up and running integration tests as painless as possible.
 
-**After Pesto:***
+**After Pesto:**
 
 ```shell
 npm install -g pesto
