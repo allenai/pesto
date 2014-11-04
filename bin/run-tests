@@ -12,10 +12,10 @@ if(!config || !fs.existsSync(config) || !fs.statSync(config).isFile()) {
 
 pesto(config).then(
   function(success) {
-    process.exit(0);
+    process.exit(success ? 0 : 3);
   },
   function(e) {
-    console.log(e);
+    console.error(e);
     process.exit(2);
   }
 );

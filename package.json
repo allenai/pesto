@@ -1,7 +1,7 @@
 {
   "name": "pesto",
   "description": "The perfect recipe for running integration tests of AngularJS based web applications.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": "/allenai/pesto.git",
   "bin": "bin/run-tests",
   "keywords": [

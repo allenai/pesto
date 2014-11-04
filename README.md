@@ -9,6 +9,40 @@ The perfect recipe for running integration tests of [AngularJS](https://angularj
 
 Ultimately, pesto is a simple API for running integration tests using [Protractor](http://angular.github.io/protractor/) and other supporting technologies.
 
+## Motivation
+
+There's too many moving parts required to setup integration tests using Protractor and Angular:
+
+**Before Pesto:**
+
+```shell
+npm install -g protractor
+
+webdriver-manager update
+webdriver-manager start
+
+touch protractor.conf.js
+vim protractor.conf.js
+
+protractor protractor.conf.js
+webdriver-manager stop
+```
+
+Add saucelabs to the mix and things get even crazier.
+
+The goal of pesto is to make setting up and running integration tests as painless as possible.  As if testing isn't easy, then no one will do it.
+
+**After Pesto:***
+
+```shell
+npm install -g pesto
+touch protractor.conf.js
+vim protractor.conf.js
+pesto protractor.conf.js
+```
+
+Pesto comes loaded with the dependencies you need (plus it'll download any supporting binaries or jars you need at runtime).
+
 ## Installation
 
 Install via `npm`:
@@ -92,3 +126,11 @@ You can also run `pesto` via the command line if installed globally (`npm instal
 ```shell
 pesto path/to/config.js
 ```
+
+## Next Up
+
+Pesto is most certainly in an alpha state.  Immediate targets for refinement include:
+
+* Cleanup log output.
+* Add configurable log level and the ability to redirect logs output.
+* Configurable reporters.

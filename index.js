@@ -63,7 +63,6 @@ module.exports = function(configFile) {
 
               // TODO: This reporting is noisy and should be handled elsewhere and/or be configurable
               console.log('-------------------------------------------'.cyan);
-              console.log('[pesto]'.cyan + ' Tests executed successfully.');
               console.log('[pesto]'.cyan + ' Status: ' + (success ? '✔ Success'.green : '× Failure'.red));
               console.log('-------------------------------------------'.cyan);
 
